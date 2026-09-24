@@ -1,7 +1,6 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -9,8 +8,6 @@ import cors from 'cors';
 import multer from 'multer';
 import { getDb, queryAll, queryOne, execute, persistDb } from './server/db.ts';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const JWT_SECRET = process.env.JWT_SECRET || 'academic-jwt-secret-assignment-tracker-2026';
 
